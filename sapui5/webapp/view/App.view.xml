@@ -1,9 +1,20 @@
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="logaligroup.sapui5.controller.App">
-    <Button id="btn_hello" text="{i18n>showHelloButtonText}" press=".onShowHello"></Button>
-    <Input id="txt_01"
-           value="{/recipient/name}"
-           description="Hello {/recipient/name} "
-           valueLiveUpdate="true"
-           width="60%"
-           ></Input>
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="logaligroup.sapui5.controller.App"
+        displayBlock="true" xmlns:core="sap.ui.core">
+ <Shell id="_IDGenShell1" >
+    <App id="_IDGenApp1">
+        <pages>
+            <Page id="_IDGenPage1" title="{i18n>appTitle}">
+                <headerContent>
+                <Button id="btn_hdialogHeader" icon="sap-icon://action"
+                        press=".onOpenDialogHeader" class="sapUiSmallMarginEnd"></Button>
+                </headerContent>
+                <content>
+                        <mvc:XMLView id="_IDGenXMLView1" viewName="logaligroup.sapui5.view.HelloPanel"/>
+                        <core:Fragment fragmentName="logaligroup.sapui5.view.Form01" type="XML" />
+                        <mvc:XMLView id="_IDGenXMLView2" viewName="logaligroup.sapui5.view.InvoicesList"/>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
 </mvc:View>

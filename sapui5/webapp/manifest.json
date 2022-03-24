@@ -56,6 +56,10 @@
           "bundleName": "logaligroup.sapui5.i18n.i18n"
         }
       },
+      "invoices":{
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "Invoices.json"
+      },
       "": {
         "dataSource": "mainService",
         "preload": true,
