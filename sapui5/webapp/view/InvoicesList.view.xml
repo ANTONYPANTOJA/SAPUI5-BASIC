@@ -1,6 +1,6 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="logaligroup.sapui5.controller.InvoicesList">
 <List id="_IDGenList1" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" 
-      items="{ path: 'invoices>/Invoices',
+      items="{ path: 'northwind>/Invoices',
                sorter: { path: 'ShipperName' ,
                          group: true } }">
     
@@ -12,18 +12,19 @@
         </Toolbar>
     </headerToolbar>
     <items>
-        <ObjectListItem id="_IDGenObjectListItem1" title="{invoices>Quantity} x {invoices>ProductName}"
-                        number="{ parts : [ {path : 'invoices>ExtendedPrice' },
+        <ObjectListItem id="_IDGenObjectListItem1" title="{northwind>Quantity} x {northwind>ProductName}"
+                        number="{ parts : [ {path : 'northwind>ExtendedPrice' },
                                             {path : 'currency>/usd' }],
                                   type: 'sap.ui.model.type.Currency',
                                   formatOptions:{ showMeasure: false }}"
                         numberUnit="{currency>/usd}"
-                        numberState ="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
-
+                        numberState ="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+<!--
             <firstStatus>
-                <ObjectStatus id="_IDGenObjectStatus1" text="{ path: 'invoices>Status',
+                <ObjectStatus id="_IDGenObjectStatus1" text="{ path: 'northwind>Status',
                                       formatter: '.formatter.invoiceStatus'}"></ObjectStatus>
             </firstStatus>
+-->
         </ObjectListItem>
     </items>
 </List>

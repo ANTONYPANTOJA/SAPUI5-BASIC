@@ -10,13 +10,21 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "dataSources": {
-      "mainService": {
+      "localservice": {
         "uri": "/sap/opu/odata/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
+        }
+      },
+      "mainService": {
+        "uri": "Northwind/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
         }
       }
     }
@@ -56,19 +64,18 @@
           "bundleName": "logaligroup.sapui5.i18n.i18n"
         }
       },
-      "invoices":{
-            "type": "sap.ui.model.json.JSONModel",
-            "uri": "Invoices.json"
+      "invoices": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Invoices.json"
       },
-      "": {
+      "northwind": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true,
-          "groupId": "$direct"
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request",
+          "refreshAfterChange": false
         }
       }
     },

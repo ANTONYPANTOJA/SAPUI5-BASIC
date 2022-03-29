@@ -11,54 +11,29 @@
   ],
   "configurations": [
     {
-      "name": "Start sapui5",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npx",
+      "name": "sapui5",
       "cwd": "${workspaceFolder}/sapui5",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
       "runtimeArgs": [
         "fiori",
         "run"
       ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
       "args": [
         "--open",
         "test/flpSandbox.html?sap-ui-xx-viewCache=false#logaligroupsapui5-display"
       ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/sapui5\"}"
-      }
-    },
-    {
-      "name": "Start sapui5 Local",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/sapui5",
-      "runtimeExecutable": "npx",
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--config",
-        "./ui5-local.yaml",
-        "--open",
-        "test/flpSandbox.html?sap-ui-xx-viewCache=false#logaligroupsapui5-display"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/sapui5\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/sapui5\"}",
+        "FIORI_TOOLS_UI5_VERSION": "",
+        "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"destination\":\"Northwind\"}]"
       }
     }
   ],
