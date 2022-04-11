@@ -114,7 +114,7 @@
       }
     },
     {
-      "name": "Qunit_new",
+      "name": "Qunit_Test_new",
       "cwd": "${workspaceFolder}/sapui5",
       "runtimeArgs": [
         "fiori",

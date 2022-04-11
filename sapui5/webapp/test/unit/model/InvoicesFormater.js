@@ -1,4 +1,3 @@
-
 //@ts-nocheck
 sap.ui.define([
     'logaligroup/sapui5/model/InvoicesFormatter',
@@ -30,13 +29,13 @@ sap.ui.define([
         let oControllerStub = {
             getView: this.stub().returns(oViewStub)
         };
+
         let fnIsolatedFormater = InvoicesFormatter.invoiceStatus.bind(oControllerStub);
 
         //Asert
         assert.strictEqual(fnIsolatedFormater("A"),"New","The invoices status for A is correct");
         assert.strictEqual(fnIsolatedFormater("B"),"In Progress","The invoices status for B is correct");
         assert.strictEqual(fnIsolatedFormater("C"),"Done","The invoices status for C is correct");
-
 
     });
 });
