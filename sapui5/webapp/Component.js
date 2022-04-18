@@ -34,11 +34,14 @@ sap.ui.define([
             this.setModel(Models.createRecipient());
 
             //Set i18n model in the view
-            var i18nModel = new ResourceModel({ bundleName: "logaligroup.sapui5.i18n.i18n" });
-            this.setModel(i18nModel, "i18n");
+           // var i18nModel = new ResourceModel({ bundleName: "logaligroup.sapui5.i18n.i18n" });
+           // this.setModel(i18nModel, "i18n");
 
             //Componente centralizado HelloDialog
               this._helloDialog = new HelloDialog(this.getRootControl());
+
+            //Create the views based on the URL/Hash
+                this.getRouter().initialize();
         },
 
          exit : function(){
@@ -49,6 +52,8 @@ sap.ui.define([
          openHelloDialog : function(){
              this._helloDialog.open();
          }
+
+
 
     });
 

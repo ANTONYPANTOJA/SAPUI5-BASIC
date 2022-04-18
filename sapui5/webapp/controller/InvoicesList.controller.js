@@ -4,14 +4,15 @@ sap.ui.define([
     'sap/ui/model/json/JSONModel',
     '../model/InvoicesFormatter',
     'sap/ui/model/Filter',
-    'sap/ui/model/FilterOperator' 
+    'sap/ui/model/FilterOperator',
+    'sap/ui/core/UIComponent' 
 ], 
 /**
  * 
  * @param {typeof sap.ui.core.mvc.Controller  } Controller 
  * @param {typeof sap.ui.model.json.JSONModel } JSONModel 
  */
-function(Controller, JSONModel,InvoicesFormatter,Filter,FilterOperator) {
+function(Controller, JSONModel,InvoicesFormatter,Filter,FilterOperator,UIComponent) {
     
     return Controller.extend("logaligroup.sapui5.controller.InvoicesList",{
 
@@ -34,6 +35,18 @@ function(Controller, JSONModel,InvoicesFormatter,Filter,FilterOperator) {
             const oList = this.getView().byId("_IDGenList1");
             const oBinding = oList.getBinding("items");
             oBinding.filter(aFilter);
+        },
+        navigateToDetails: function(oEvent){
+            //Obtener el item seleccionado
+            const oItem = oEvent.getSource();
+             //Determinar el link de navegation
+             const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("Details",{
+//pasar el path con los datos
+                invoicePath: window.encodeURIComponent(oItem.getBindingContext("northwind").getPath().substr(1))
+
+            });
+        
         }
     });
 });

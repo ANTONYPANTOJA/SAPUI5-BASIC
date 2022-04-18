@@ -17,7 +17,7 @@ sap.ui.define([
         }
     });
 
-    QUnit.test("Shold Return the invoices Status",function(){
+    QUnit.test("Shold Return the invoices Status",function(assert){
 
         let oModel = this.stub();
         oModel.withArgs("i18n").returns(this._oResourceModel);

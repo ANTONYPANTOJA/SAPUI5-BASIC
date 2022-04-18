@@ -1,0 +1,21 @@
+<mvc:View xmlns="sap.m" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          controllerName="logaligroup.sapui5.controller.Details"
+          displayBlock="true" 
+          xmlns:core="sap.ui.core">
+ 
+    <Page id="Page_01" title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+        <ObjectHeader id="Obj01" title="{northwind>Quantity} x {northwind>ProductName}">
+        <attributes>
+            <ObjectAttribute id="_IDGenObjectAttribute1" text="{northwind>ShipName}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute2" text="{northwind>ShipAddress}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute3" text="{northwind>ShipCity}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute4" text="{northwind>ShipRegion}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute5" text="{northwind>ShipPostalCode}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute6" text="{northwind>ShipCountry}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute7" text="{northwind>CustomerID}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute8" text="{northwind>CustomerName}"></ObjectAttribute>
+        </attributes>
+        </ObjectHeader>
+    </Page>
+</mvc:View>
