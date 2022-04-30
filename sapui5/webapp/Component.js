@@ -3,7 +3,8 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     'logaligroup/sapui5/model/Models',
     'sap/ui/model/resource/ResourceModel',
-    './controller/HelloDialog'
+    './controller/HelloDialog',
+    'sap/ui/Device'
 
     /** 
     *  @param {typeof sap.ui.core.UIComponent} UIComponent
@@ -11,7 +12,7 @@ sap.ui.define([
     *  @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
     */
 
-], function (UIComponent, Models, ResourceModel,HelloDialog) {
+], function (UIComponent, Models, ResourceModel,HelloDialog,Device) {
     'use strict';
     return UIComponent.extend("logaligroup.sapui5.Component", {
 
@@ -33,6 +34,10 @@ sap.ui.define([
             //Set data model in the view
             this.setModel(Models.createRecipient());
 
+            //Set data Model Device
+            this.setModel(Models. createDeviceModel(),"device");
+
+
             //Set i18n model in the view
            // var i18nModel = new ResourceModel({ bundleName: "logaligroup.sapui5.i18n.i18n" });
            // this.setModel(i18nModel, "i18n");
@@ -51,6 +56,15 @@ sap.ui.define([
          },
          openHelloDialog : function(){
              this._helloDialog.open();
+         },
+         getContentDensityClass: function() {
+             var _sContentDensityClass;
+            if (!Device.support.touch) {
+                _sContentDensityClass = "sapUiSizeCompact";
+            }else{
+                _sContentDensityClass = "sapUiSizeCozy";
+            }
+            return _sContentDensityClass;
          }
 
 

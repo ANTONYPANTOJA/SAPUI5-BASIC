@@ -19,7 +19,7 @@ sap.ui.define([
 
         Given.iStartMyUIComponent({
 
-            ComponentConfig: {
+            componentConfig: {
                 name: "logaligroup.sapui5" 
             }
         });

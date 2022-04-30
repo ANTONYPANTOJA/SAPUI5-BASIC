@@ -1,10 +1,14 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="logaligroup.sapui5.controller.HelloPanel"
           displayBlock="true" xmlns:core="sap.ui.core">
 
- <Panel id="_IDGenPanel1" headerText="{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto">
+ <Panel id="_IDGenPanel1" headerText="{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto"
+        expandable="{device>/system/phone}"
+        expanded="{= ! ${device>/system/phone} }">
             <content>
-                    <Button id="btn_hdialog" icon="sap-icon://action" text="{i18n>helloDialogBut}" press=".onOpenDialog" class="sapUiSmallMarginEnd"></Button>
-                    <Button id="btn_hello" text="{i18n>showHelloButtonText}" press=".onShowHello" class="sapUiSmallMarginEnd"/>
+                    <Button id="btn_hdialog" icon="sap-icon://action" text="{i18n>helloDialogBut}" press=".onOpenDialog" 
+                            class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"></Button>
+                    <Button id="btn_hello" text="{i18n>showHelloButtonText}" press=".onShowHello" 
+                            class="sapUiSmallMarginEnd sapUiHideOnDesktop"/>
                         <Input id="txt_01"
                                         value="{/recipient/name}"
                                         valueLiveUpdate="true"

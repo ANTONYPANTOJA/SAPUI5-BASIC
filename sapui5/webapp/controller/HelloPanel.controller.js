@@ -4,7 +4,8 @@ sap.ui.define([
     'sap/m/MessageToast',
     'logaligroup/sapui5/model/Models',
     'sap/ui/model/resource/ResourceModel',
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/base/Log"
 
 
     /**
@@ -13,7 +14,7 @@ sap.ui.define([
      *  @param {typeof logaligroup.sapui5.model.Models} Models
      *  @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
      */
-], function (Controller, MessageToast, Models, ResourceModel,Fragment){
+], function (Controller, MessageToast, Models, ResourceModel,Fragment,Log){
     return Controller.extend("logaligroup.sapui5.controller.HelloPanel", {
 
         onInit: function () {
@@ -34,6 +35,17 @@ sap.ui.define([
             //            this.getView().setModel(i18nModel,"i18n");
 
         },
+
+        onBeforeRendering: function(){
+            window.message = 'Log message - onBeforeRendering';
+            Log.info(window.message);
+            Log.error(window.message);
+            
+        },
+        onAfterRendering: function(){
+            //debugger;
+        },
+
         onShowHello: function () {
             //alert("Hello Word");
             //            MessageToast.show('Hello Word');
